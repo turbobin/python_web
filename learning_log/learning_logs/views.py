@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 # from django.core.urlresolvers import reverse
 from django.urls import reverse
+from django.contrib.auth.decorators import login_required
 
 from .models import Topic,Entry
 from .forms import TopicForm,EntryForm
@@ -9,7 +10,8 @@ from .forms import TopicForm,EntryForm
 def index(request):
 	"""学习笔记的主页"""
 	return render(request,'learning_logs/index.html')
-	
+
+@login_required		#限制未登录的访问
 def topics(request):
 	"""显示所有的主题"""
 	topics = Topic.objects.order_by('date_added')
