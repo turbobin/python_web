@@ -25,8 +25,8 @@ SECRET_KEY = 'so$td*)dg-&ethsvm)e-i+l87c(^m6*$4fo-r6#=vx26lzxrru'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS ="*"
 
 # Application definition
 
@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+
+    #第三方应用程序
+    'bootstrap3',
     #我的应用程序
     'learning_logs',
     'users',
@@ -107,7 +109,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+# LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-Hans'
 
 TIME_ZONE = 'UTC'
 
@@ -115,7 +118,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False  #设置为本机时区
 
 
 # Static files (CSS, JavaScript, Images)
@@ -125,3 +128,8 @@ STATIC_URL = '/static/'
 
 # 我的设置
 LOGIN_URL = '/users/login'
+
+# django-bootstrap3的设置
+BOOTSTRAP3 = {
+    'include_jquery':True
+}
