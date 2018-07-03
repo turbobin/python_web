@@ -13,6 +13,7 @@ urlpatterns = [
     
     #显示特定主题的详细页面
     re_path(r'topics/(?P<topic_id>\d+)/',views.topic,name='topic'),
+    # 正则匹配，括号 表示正则中的组，Django会自动取值传递参数到views.topic方法中
 
     # 用于添加新主题的网页
     re_path(r'^new_topic/$',views.new_topic,name='new_topic'),

@@ -1,3 +1,7 @@
+安装虚拟环境：
+learning_log> python -m venv ll_env
+或
+learning_log> virtualenv ll_env
 1,激活虚拟环境：
 进入 D:\Program Files\java\eclipse-workspace\Python_Project\python_project\python_web\learning_log\ll_env\Scripts
 

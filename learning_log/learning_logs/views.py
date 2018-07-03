@@ -10,13 +10,18 @@ from .forms import TopicForm,EntryForm
 # Create your views here.
 def index(request):
 	"""学习笔记的主页"""
+
+	#调用模板并响应，未接收参数
 	return render(request,'learning_logs/index.html')
 
 @login_required		#限制未登录的访问
 def topics(request):
 	"""显示所有的主题"""
 	topics = Topic.objects.filter(owner=request.user).order_by('date_added')
+	#上下文：是个字典，一般封装从数据库中查询出来的数据
 	context = {'topics':topics}
+
+	# 渲染模板并响应，接受一个上下文作为参数，传递给模板
 	return render(request,'learning_logs/topics.html',context)
 
 @login_required
