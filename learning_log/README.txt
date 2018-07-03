@@ -1,3 +1,5 @@
+﻿Django开发笔记
+
 安装虚拟环境：
 learning_log> python -m venv ll_env
 或
